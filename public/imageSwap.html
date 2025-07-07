@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>swap</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="flex justify-center items-center h-screen m-auto bg-[#f1f5f9]">
+    <div class="flex items-center justify-center gap-10">
+      <img
+        src="../assests/CAT-PET.png"
+        alt="Loading..."
+        id="firstImage"
+        class="w-70 h-70 rounded-2xl bg-cover"
+      />
+      <button
+        id="btn"
+        class="cursor-pointer p-3 bg-[#3b82f6] text-[#ffffff] font-bold border-none outline-none rounded-[8px] hover:bg-[#2563eb] active:scale-95 transform duration-150"
+      >
+        Swap Image
+      </button>
+      <img
+        src="../assests/DOG-PET.png"
+        alt="Loading..."
+        id="secondImage"
+        class="w-70 h-70 rounded-2xl"
+      />
+    </div>
+
+    <script>
+      let imageOne = document.getElementById("firstImage");
+      let imageTwo = document.getElementById("secondImage");
+      let button = document.getElementById("btn");
+      button.addEventListener("click", () => {
+        let firstAttribute = imageOne.getAttribute("src");
+        let secondAttribute = imageTwo.getAttribute("src");
+        imageOne.setAttribute("src", secondAttribute);
+        imageTwo.setAttribute("src", firstAttribute);
+      });
+    </script>
+  </body>
+</html>
